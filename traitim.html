@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trái Tim 3D với Three.js</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Khởi tạo cảnh, máy ảnh, và renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Tạo mô hình trái tim 3D
+        const heartShape = new THREE.Shape();
+        heartShape.moveTo(0, 0);
+        heartShape.bezierCurveTo(0, 0, 1, -1, 1, 0); // Nửa trên bên phải
+        heartShape.bezierCurveTo(1, 1, 0, 2, 0, 1); // Bên trái
+
+        const extrudeSettings = { depth: 0.5, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.1, bevelThickness: 0.1 };
+        const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
+        const material = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+        const heartMesh = new THREE.Mesh(geometry, material);
+        scene.add(heartMesh);
+
+        // Đặt vị trí máy ảnh
+        camera.position.z = 5;
+
+        // Hàm render
+        function animate() {
+            requestAnimationFrame(animate);
+            heartMesh.rotation.x += 0.01;
+            heartMesh.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Điều chỉnh kích thước khi thay đổi kích thước cửa sổ
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
