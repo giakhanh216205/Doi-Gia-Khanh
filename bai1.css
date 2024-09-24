@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(#f5eded,WHITE) ;
+    background-repeat: no-repeat;
+}
+.input{
+    width: 90%;
+    margin: 0 auto;
+}
+.header{
+    background-color: brown;
+    height: 120px;
+    width: auto;
+
+}
+.left{
+    background-color: aliceblue;
+    height:350px;
+    width: 20%;
+    float: left;
+
+}
+.main{
+    background-color: rgb(210, 88, 44);
+    height: 350px;
+    width: 60%;
+    float: left;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+.right{
+    background-color: blue;
+    height:350PX ;
+    width: 20%;
+    float: left;
+}
+.footer{
+    background-color: bisque;
+    height: 150px;
+    clear: both;
+}
