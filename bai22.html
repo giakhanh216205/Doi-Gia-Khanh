@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bai22.css">
+</head>
+<body>
+    <div class="input">
+        <div class="header">
+            <h1>Dog D.Dog</h1>
+        </div>
+        <div class="block">
+            <div class="title">About</div>
+            <img src="dog.jpg" alt="" class="image">
+            <p>Woof Woof!</p>
+                <p>Hi, I'm Dog. I love USERS design </p>
+            </div>
+
+            <div class="content"></div>
+        </div>
+        <div class="block" class="tab">
+            <div class="title">Courses</div>
+            <div class="content">
+                <table border="1" width="450px" >
+                    <tr>
+                        <td>Courses number</td>
+                        <td>Courses title</td>
+                        <td>Semester teken</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">For Credit</td>
+                    </tr>
+                    <tr>
+                        <td class="tt1">6.850</td>
+                        <td>USERS design</td>
+                        <td>12/2013</td>
+                    </tr>
+                    <tr>
+                        <td class="tt1">6.039</td>
+                        <td>AI</td>
+                        <td>1/2013</td>
+                    </tr>
+                    <tr>
+                        <td class="tt1">6.006</td>
+                        <td>Introduction to Algorithms</td>
+                        <td>1/2013</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Listener</td>
+                    </tr>
+                    <tr>
+                        <td>6.867</td>
+                        <td>Machine Learning</td>
+                        <td>8/2014</td>
+                    </tr>
+                    <tr>
+                        <td>6.830</td>
+                        <td>Dadabase Systems</td>
+                        <td>12/2015</td>
+                    </tr>
+                </table>
+        </div>
+        <div class="block">
+            <div class="title">Interests</div>
+            <h2>I am interested in HCI, memes, and youtube video</h2>
+            <div class="content"></div>
+        </div>
+        <div class="block">
+            <div class="title">Submit Pet Information</div>
+            <h3>Would you love to know what kinds of pets you 'own'. Submit below!</h3>
+            <div class="content"></div>
+        </div>
+    </div>
+    <form>
+        <label for="name">Họ tên:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="study-field">Ngành học của bạn:</label><br>
+        <input type="text" id="study-field" name="study-field"><br><br>
+
+        <label for="gender">Cho biết giới tính:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+        </select><br><br>
+
+        <button type="submit">Gửi</button>
+    </form>
+</body>
+</html>
